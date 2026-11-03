@@ -1,0 +1,37 @@
+/* Bound the sidebar independently of the min-content width of history previews. */
+:root { --session-sidebar-width: clamp(250px, 18vw, 352px); }
+.sidebar {
+  flex: 0 0 var(--session-sidebar-width);
+  width: var(--session-sidebar-width);
+  min-width: 0;
+  max-width: var(--session-sidebar-width);
+  overflow: hidden;
+}
+.sidebar-content, .session-list, .session-row { min-width: 0; max-width: 100%; width: 100%; }
+.session-item, .session-copy { min-width: 0; max-width: 100%; }
+.session-title, .session-preview { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.brand, .sidebar-footer { min-width: 0; }
+.sidebar-footer > div { min-width: 0; }
+.sidebar-footer strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.main { flex: 1 1 0; min-width: 0; }
+
+/* A fine blue-violet illuminated edge, while the writing surface stays quiet. */
+.composer {
+  border: 1px solid transparent;
+  border-radius: 16px;
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(115deg, #83b8ef 0%, #9c94dd 52%, #7bbbdc 100%) border-box;
+  box-shadow: 0 0 0 1px #8bace410, 0 0 15px #739fe51a;
+  transition: box-shadow .16s ease;
+}
+.composer:focus-within {
+  border-color: transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(115deg, #589fe9 0%, #9c82e5 52%, #55afd8 100%) border-box;
+  box-shadow: 0 0 0 2px #8aabec15, 0 0 22px #789fe52b;
+}
+.composer.disabled { box-shadow: 0 0 10px #8dabe50d; }
+@media (max-width: 720px) {
+  .sidebar { width: min(290px, 86vw); max-width: min(290px, 86vw); flex-basis: auto; }
+  .composer { border-radius: 14px; }
+}

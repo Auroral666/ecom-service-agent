@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# 环境变量（含密钥，禁止提交）
+.env
+
+# Claude Code
+.claude/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# 会话持久化文件
+app/sessions/
+
+# Vue frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+.local-backups/
+
+# Private accounts, login sessions and employee invitation codes
+app/sessions/web/.portal/
+
+# Local environment variants and runtime artifacts
+.env.*
+!.env.example
+.runtime/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+temp/
+frontend/.ui-review/
+*.log
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.pem
+*.key
+
+# Local notes, generated documents and historical run output
+docs/*-5h/
+docs/*学习笔记*.txt
